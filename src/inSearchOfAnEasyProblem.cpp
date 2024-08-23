@@ -24,20 +24,22 @@ void fast_io() {
 
 int main() {
   fast_io();
-  int n, t;
-  cin >> n >> t;
+  int n;
+  cin >> n;
 
-  string s;
-  cin >> s;
+  int x;
+  bool f = false;
 
-  rep(i, 0, t) {
-    rep(j, 0, n - 1) {
-      if (s[j] == 'B' && s[j + 1] == 'G') {
-        swap(s[j], s[j + 1]);
-        j++;
-      }
+  rep(i, 0, n) {
+    cin >> x;
+    if (x == 1) {
+      f = true;
     }
   }
-  cout << s << endl;
+  if (f) {
+    cout << "HARD";
+  } else {
+    cout << "EASY";
+  }
   return 0;
 }

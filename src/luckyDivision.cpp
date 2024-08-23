@@ -24,20 +24,14 @@ void fast_io() {
 
 int main() {
   fast_io();
-  int n, t;
-  cin >> n >> t;
+  int n;
+  cin >> n;
 
-  string s;
-  cin >> s;
-
-  rep(i, 0, t) {
-    rep(j, 0, n - 1) {
-      if (s[j] == 'B' && s[j + 1] == 'G') {
-        swap(s[j], s[j + 1]);
-        j++;
-      }
-    }
+  if (n % 4 == 0 || n % 7 == 0 || n % 47 == 0 || n % 74 == 0 || n % 447 == 0 ||
+      n % 474 == 0 || n % 477 == 0 || n % 744 == 0 || n % 747 == 0 ||
+      n % 774 == 0) {
+    cout << "YES";
+  } else {
+    cout << "NO";
   }
-  cout << s << endl;
-  return 0;
 }

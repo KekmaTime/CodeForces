@@ -24,20 +24,26 @@ void fast_io() {
 
 int main() {
   fast_io();
-  int n, t;
-  cin >> n >> t;
-
   string s;
   cin >> s;
 
-  rep(i, 0, t) {
-    rep(j, 0, n - 1) {
-      if (s[j] == 'B' && s[j + 1] == 'G') {
-        swap(s[j], s[j + 1]);
-        j++;
-      }
-    }
+  int n = sz(s);
+  int cnt = 0;
+  rep(i, 0, n) {
+    if (s[i] == 'h' && cnt == 0)
+      cnt++;
+    else if (s[i] == 'e' && cnt == 1)
+      cnt++;
+    else if (s[i] == 'l' && cnt == 2)
+      cnt++;
+    else if (s[i] == 'l' && cnt == 3)
+      cnt++;
+    else if (s[i] == 'o' && cnt == 4)
+      cnt++;
   }
-  cout << s << endl;
+  if (cnt == 5)
+    cout << "YES";
+  else
+    cout << "NO";
   return 0;
 }
